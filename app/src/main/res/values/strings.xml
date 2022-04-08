@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ChallengerOneApp</string>
+
+    <string name="title_dashboard">Products</string>
+    <string name="title_details">Details</string>
+    <string name="title_cart">Cart</string>
+
+
+    <string name="product_error_message">There are no Products to show at this moment.\nPlease come back later</string>
+    <string name="cart_message">There are no Products in your Cart.\nGo back to store to add some.</string>
+    <string name="user_profile">In Progress</string>
+
+    <!--Product Strings-->
+    <string name="product_name">Nike Sports - Red</string>
+    <string name="product_description">All terrain Running Shoes</string>
+    <string name="product_amount">All terrain Running Shoes</string>
+
+</resources>
