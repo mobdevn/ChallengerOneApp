@@ -1,4 +1,4 @@
-package com.android.challengeroneapp.user
+package com.android.challengeroneapp.view.user
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

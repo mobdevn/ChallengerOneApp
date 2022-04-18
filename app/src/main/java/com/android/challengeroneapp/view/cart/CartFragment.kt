@@ -1,4 +1,4 @@
-package com.android.challengeroneapp.cart
+package com.android.challengeroneapp.view.cart
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

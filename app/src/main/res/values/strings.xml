@@ -2,7 +2,7 @@
     <string name="app_name">ChallengerOneApp</string>
 
     <string name="title_dashboard">Products</string>
-    <string name="title_details">Details</string>
+    <string name="title_details">Profile</string>
     <string name="title_cart">Cart</string>
 
 
@@ -13,6 +13,6 @@
     <!--Product Strings-->
     <string name="product_name">Nike Sports - Red</string>
     <string name="product_description">All terrain Running Shoes</string>
-    <string name="product_amount">All terrain Running Shoes</string>
+    <string name="product_amount">$0.0</string>
 
 </resources>

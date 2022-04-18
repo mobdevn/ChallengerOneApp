@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".product.ProductFragment">
+    tools:context=".view.product.ProductFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -31,6 +31,7 @@
         app:layout_constraintVertical_bias="0.02" />
 
     <TextView
+        android:id="@+id/productErrorMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

@@ -3,6 +3,7 @@ package com.android.challengeroneapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.android.challengeroneapp.view.BaseActivity
 import java.util.*
 import kotlin.concurrent.schedule
 

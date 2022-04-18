@@ -1,11 +1,12 @@
-package com.android.challengeroneapp
+package com.android.challengeroneapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.android.challengeroneapp.cart.CartFragment
-import com.android.challengeroneapp.product.ProductFragment
-import com.android.challengeroneapp.user.UserProfileFragment
+import com.android.challengeroneapp.R
+import com.android.challengeroneapp.view.cart.CartFragment
+import com.android.challengeroneapp.view.product.ProductFragment
+import com.android.challengeroneapp.view.user.UserProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BaseActivity : AppCompatActivity() {
@@ -13,11 +14,9 @@ class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
-        setUpToolbar()
         val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
         bottomNavigation.setOnItemSelectedListener(mOnNavigationListener)
         bottomNavigation.menu.setGroupCheckable(1, false, true)
-
 
         openFragment(firstFragment)
     }
@@ -47,12 +46,6 @@ class BaseActivity : AppCompatActivity() {
         transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-    }
-
-    fun setUpToolbar() {
-        // Hide action bar
-       /* val actionBar = supportActionBar
-        actionBar!!.hide()*/
     }
 
     companion object {
