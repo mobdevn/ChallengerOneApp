@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.challengeroneapp.R
 import com.android.challengeroneapp.data.model.ProductResponse
 import com.android.challengeroneapp.view.adapter.ProductListAdapter
 import com.android.challengeroneapp.viewmodel.ProductListDataViewModel
+import kotlinx.coroutines.launch
 
 
 class ProductFragment : Fragment() {
@@ -30,7 +32,7 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = ProductListAdapter(productList)
+        val adapter = ProductListAdapter(productList, onItemClickListener)
         val textView = view.findViewById<TextView>(R.id.productErrorMsg)
         val recyclerview = view.findViewById<RecyclerView>(R.id.productListView)
         recyclerview.layoutManager = LinearLayoutManager(activity)
@@ -47,5 +49,14 @@ class ProductFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private val onItemClickListener = object: View.OnClickListener {
+        override fun onClick(itemView: View?) {
+            val item = itemView?.tag as ProductResponse
+            lifecycleScope.launch {
+                viewModel.saveItemToCart(item)
+            }
+        }
     }
 }

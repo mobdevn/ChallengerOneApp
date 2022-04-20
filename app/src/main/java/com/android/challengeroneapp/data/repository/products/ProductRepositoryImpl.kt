@@ -1,34 +1,35 @@
 package com.android.challengeroneapp.data.repository.products
 
+import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.android.challengeroneapp.data.db.MyShopDao
+import com.android.challengeroneapp.data.db.entity.CartEntity
 import com.android.challengeroneapp.data.model.ProductResponse
 import com.android.challengeroneapp.db
 import com.android.challengeroneapp.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.concurrent.thread
 
 class ProductRepositoryImpl : ProductRepository {
 
     private val apiObject = RetrofitClient.getApiObject()
     private val productsDao: MyShopDao = db.myShopDao()
-    private var productById: LiveData<ProductResponse>? = null
-    private val productsList: LiveData<List<ProductResponse>>
+    private val productsList: LiveData<List<ProductResponse>> = productsDao.getAll()
 
-    init {
-        productsList = productsDao.getAll()
+    @WorkerThread
+    suspend fun saveProductToTable(productResponse: ProductResponse) {
+        productsDao.insert(productResponse)
     }
 
-    override fun saveMovieToDb(productResponse: ProductResponse) {
-        thread {
-            productsDao.insert(productResponse)
-        }
+    @WorkerThread
+    suspend fun saveProductToCart(cartItem: CartEntity) {
+        productsDao.insertToCart(cartItem)
     }
 
-    override fun getAllProductsFromDb() = productsList
+    @WorkerThread
+    fun getAllProductsFromDb() = productsList
 
     override fun getAllProducts() : LiveData<List<ProductResponse>> {
         val data = MutableLiveData<List<ProductResponse>>()

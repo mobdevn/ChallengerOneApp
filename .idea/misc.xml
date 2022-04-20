@@ -9,7 +9,8 @@
         <entry key="app/src/main/res/drawable/outline_store_24.xml" value="0.2635" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/cart_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.34148550724637683" />
         <entry key="app/src/main/res/layout/product_list_view.xml" value="0.1" />

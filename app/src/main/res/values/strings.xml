@@ -14,5 +14,7 @@
     <string name="product_name">Nike Sports - Red</string>
     <string name="product_description">All terrain Running Shoes</string>
     <string name="product_amount">$0.0</string>
+    <string name="remove_item">Remove Item</string>
+    <string name="delivery_by_1_april">Delivery by 1 April</string>
 
 </resources>

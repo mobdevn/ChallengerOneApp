@@ -1,8 +1,16 @@
 package com.android.challengeroneapp.data.model
 
+import androidx.annotation.NonNull
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class CaregoryResponse(
+@Entity
+data class CategoryResponse(
+    @NonNull
+    @PrimaryKey
+    @SerializedName("id")
+    val id: String,
     @SerializedName("title")
     val title: String? = null,
     @SerializedName("price")

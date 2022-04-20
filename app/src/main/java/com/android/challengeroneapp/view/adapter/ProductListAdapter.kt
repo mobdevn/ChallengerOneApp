@@ -1,34 +1,42 @@
 package com.android.challengeroneapp.view.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.android.challengeroneapp.R
 import com.android.challengeroneapp.data.model.ProductResponse
+import com.android.challengeroneapp.data.repository.products.ProductRepositoryImpl
 import com.android.challengeroneapp.databinding.ProductListViewBinding
 import com.android.challengeroneapp.utils.setDefaultText
 import com.android.challengeroneapp.utils.setImage
 
-class ProductListAdapter(val listView: List<ProductResponse>) :
-    RecyclerView.Adapter<ProductListAdapter.DataViewHolder>() {
+class ProductListAdapter(
+    private val listView: List<ProductResponse>,
+    private val onClickListener: View.OnClickListener
+) : RecyclerView.Adapter<ProductListAdapter.DataViewHolder>() {
+
+    private lateinit var dataViewHolder: DataViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val binding = DataBindingUtil
             .inflate<ProductListViewBinding>(
                 LayoutInflater.from(parent.context),
-                R.layout.product_list_view, parent,
+                R.layout.product_list_view,
+                parent,
                 false
             )
-        return DataViewHolder(binding)
+        dataViewHolder = DataViewHolder(binding)
+        return dataViewHolder
     }
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val product = listView[position]
         holder.binding.product = product
-
+        holder.binding.productAddToCart.tag = product
         holder.binding.productAddToCart.setOnClickListener {
-            // to-do
+            onClickListener.onClick(it)
         }
 
         if (!product.image.isNullOrEmpty()) {

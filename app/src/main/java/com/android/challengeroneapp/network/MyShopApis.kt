@@ -1,6 +1,6 @@
 package com.android.challengeroneapp.network
 
-import com.android.challengeroneapp.data.model.CaregoryResponse
+import com.android.challengeroneapp.data.model.CategoryResponse
 import com.android.challengeroneapp.data.model.ProductResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -15,7 +15,7 @@ interface MyShopApis {
     fun getProductDetails(@Query("id") id: String): Call<ProductResponse>
 
     @GET("/products/categories")
-    fun getAllCategories(): Call<List<CaregoryResponse>>
+    fun getAllCategories(): Call<List<CategoryResponse>>
 
     @GET("/products/category/{category}")
     fun getCategoryProducts(category: String): Call<List<ProductResponse>>
