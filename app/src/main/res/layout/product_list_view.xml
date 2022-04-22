@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="product"
             type="com.android.challengeroneapp.data.model.ProductResponse" />
@@ -49,7 +48,7 @@
                     android:id="@+id/product_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/pt_sans_bold"
+                    android:fontFamily="@font/proximanovaregular"
                     android:maxLines="1"
                     android:text="@{product.title}"
                     android:textColor="@color/black"
@@ -62,6 +61,7 @@
                     android:layout_marginTop="4dp"
                     android:maxLines="2"
                     android:text="@{product.description}"
+                    android:fontFamily="@font/proximanovaregular"
                     android:textSize="14sp" />
 
                 <TextView
@@ -71,6 +71,7 @@
                     android:layout_marginTop="12dp"
                     android:maxLines="1"
                     android:text="@{product.price}"
+                    android:fontFamily="@font/proximanovaregular"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -81,11 +82,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginTop="16dp"
-                    android:background="@android:color/holo_red_dark"
+                    android:fontFamily="@font/proximanovaregular"
                     android:drawableStart="@drawable/outline_shopping_cart"
                     android:drawablePadding="16dp"
                     android:drawableTint="@color/white"
                     android:gravity="center|start"
+                    android:background="@color/purple_500"
                     android:paddingStart="48dp"
                     android:text="Add To Cart"
                     android:textAllCaps="false"

@@ -6,10 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.android.challengeroneapp.data.db.entity.CartEntity
+import com.android.challengeroneapp.data.db.entity.ProfileEntity
 import com.android.challengeroneapp.data.model.CategoryResponse
 import com.android.challengeroneapp.data.model.ProductResponse
 
-@Database(entities = [ProductResponse::class, CartEntity::class], version = 1)
+@Database(entities = [ProductResponse::class, CartEntity::class, ProfileEntity::class], version = 1)
 @TypeConverters(GenreIdConverter::class)
 abstract class MyShopDatabase : RoomDatabase() {
 

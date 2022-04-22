@@ -20,4 +20,10 @@
     <color name="GreenColor">#00823f</color>
     <color name="secondaryColor">#5f5f5f</color>
     <color name="LightBlackWithAlpha">#33ffffff</color>
+    <color name="grey">#E9EAEE</color>
+    <color name="yellow">#F8BA0F</color>
+    <color name="goodgrey">#535353</color>
+    <color name="blue">#293859</color>
+    <color name="lightgrey">#EEEEEE</color>
+    <color name="profile">#293859</color>
 </resources>
