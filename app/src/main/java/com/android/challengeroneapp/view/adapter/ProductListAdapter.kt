@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.android.challengeroneapp.R
 import com.android.challengeroneapp.data.model.ProductResponse
-import com.android.challengeroneapp.data.repository.products.ProductRepositoryImpl
 import com.android.challengeroneapp.databinding.ProductListViewBinding
 import com.android.challengeroneapp.utils.setDefaultText
 import com.android.challengeroneapp.utils.setImage

@@ -1,12 +1,10 @@
 package com.android.challengeroneapp.viewmodel
 
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.android.challengeroneapp.data.db.entity.CartEntity
-import com.android.challengeroneapp.data.repository.products.ProductRepositoryImpl
 import com.android.challengeroneapp.data.model.ProductResponse
-import com.android.challengeroneapp.utils.isOnline
+import com.android.challengeroneapp.data.repository.products.ProductRepositoryImpl
 
 class ProductListDataViewModel(private val repository: ProductRepositoryImpl = ProductRepositoryImpl()) :
     ViewModel() {
