@@ -57,9 +57,7 @@ class CartFragment : Fragment() {
     private val onItemClickListener = object: View.OnClickListener {
         override fun onClick(itemView: View?) {
             val item = itemView?.tag as CartEntity
-            lifecycleScope.launch {
-                viewModel.removeItemFromCart(item)
-            }
+            viewModel.removeItemFromCart(item)
         }
     }
 }

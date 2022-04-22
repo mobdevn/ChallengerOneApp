@@ -3,8 +3,10 @@ package com.android.challengeroneapp.viewmodel
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.android.challengeroneapp.data.db.entity.CartEntity
 import com.android.challengeroneapp.data.repository.cart.CartRepositoryImpl
+import kotlinx.coroutines.launch
 
 class CartDataViewModel(private val repository: CartRepositoryImpl = CartRepositoryImpl()) :
     ViewModel() {
@@ -25,7 +27,9 @@ class CartDataViewModel(private val repository: CartRepositoryImpl = CartReposit
         }
     }
 
-    suspend fun removeItemFromCart(item: CartEntity) {
-        repository.removeItemFromCart(item)
+    fun removeItemFromCart(item: CartEntity) {
+        viewModelScope.launch {
+            repository.removeItemFromCart(item)
+        }
     }
 }

@@ -54,9 +54,7 @@ class ProductFragment : Fragment() {
     private val onItemClickListener = object: View.OnClickListener {
         override fun onClick(itemView: View?) {
             val item = itemView?.tag as ProductResponse
-            lifecycleScope.launch {
-                viewModel.saveItemToCart(item)
-            }
+            viewModel.saveItemToCart(item)
         }
     }
 }
